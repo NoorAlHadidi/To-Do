@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "text": "Review difference between Query Builder and ORM",
+    "done": true,
+    "createdAt": "2026-02-03T13:15:00.000Z"
+  },
+  {
+    "id": 2,
+    "text": "Review request lifecycle in Express",
+    "done": true,
+    "createdAt": "2026-02-02T18:40:00.000Z"
+  },
+  {
+    "id": 3,
+    "text": "Study tRPC",
+    "done": false,
+    "createdAt": "2026-02-01T09:05:00.000Z"
+  }
+]

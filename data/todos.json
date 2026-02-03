@@ -7,8 +7,8 @@
   },
   {
     "id": 2,
-    "text": "Review request lifecycle in Express",
-    "done": true,
+    "text": "Review request lifecycle in Node.js & Express framework",
+    "done": false,
     "createdAt": "2026-02-02T18:40:00.000Z"
   },
   {
@@ -16,5 +16,11 @@
     "text": "Study tRPC",
     "done": false,
     "createdAt": "2026-02-01T09:05:00.000Z"
+  },
+  {
+    "id": 4,
+    "text": "Graduation Project",
+    "done": false,
+    "createdAt": "2026-02-03T15:50:02.550Z"
   }
 ]

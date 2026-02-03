@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 
-import todosRouter from "./routes/todos.routes.js";
+import router from "./routes/todo.routes.js";
 
 dotenv.config();
 
@@ -15,4 +15,4 @@ app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
 
-app.use("/todos", todosRouter);
+app.use("/todos", router);

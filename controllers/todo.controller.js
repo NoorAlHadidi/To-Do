@@ -14,6 +14,10 @@ export function updateTodo(req, res) {
   return res.status(200).json({ message: "Updating To-Do" });
 }
 
+export function markTodo(req, res) {
+  return res.status(200).json({ message: "Marking To-Do" });
+}   
+
 export function deleteTodo(req, res) {
   return res.status(204).json({ message: "Deleting To-Do" });
 }

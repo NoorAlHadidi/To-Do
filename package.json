@@ -1,0 +1,23 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoorAlHadidi/To-Do.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NoorAlHadidi/To-Do/issues"
+  },
+  "homepage": "https://github.com/NoorAlHadidi/To-Do#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

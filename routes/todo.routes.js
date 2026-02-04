@@ -7,7 +7,7 @@ import {
     markTodo,
     deleteTodo
 } from "../controllers/todo.controller.js";
-import { validateId, validateText, validationHandler } from "../utils/validation.helper.js";
+import { validateId, validateText } from "../utils/validation.helper.js";
 
 const router = Router();
 

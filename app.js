@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 
-import router from "./routes/todo.routes.js";
+import router from "./routes/todo.routes.ts";
 
 dotenv.config();
 

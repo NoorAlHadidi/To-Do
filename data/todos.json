@@ -16,11 +16,5 @@
     "text": "Study tRPC",
     "done": false,
     "createdAt": "2026-02-01T09:05:00.000Z"
-  },
-  {
-    "id": 4,
-    "text": "Graduation Project",
-    "done": false,
-    "createdAt": "2026-02-03T15:50:02.550Z"
   }
 ]

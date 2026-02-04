@@ -18,7 +18,11 @@ export async function saveTodo(text) {
 
 export async function getSingleTodo(id) {
     const todos = await getAllTodos();
-    return todos.find((todo) => todo.id === id);
+    const todo = todos.find((todo) => todo.id === id);
+    if (!todo) {
+        return null;
+    }
+    return todo;
 }
 
 export async function getAllTodos() {
@@ -30,13 +34,32 @@ export async function getAllTodos() {
 export async function modifyTodo(id, newText) {
     const todos = await getAllTodos();
     const todo = todos.find((todo) => todo.id === id);
+    if (!todo) {
+        return null;
+    }
     todo.text = newText;
     await fs.writeFile(DATA_PATH, JSON.stringify(todos, null, 2));
+    return todo;
 }
 
 export async function changeTodo(id) {
     const todos = await getAllTodos();
     const todo = todos.find((todo) => todo.id === id);
+    if (!todo) {
+        return null;
+    }
     todo.done = !todo.done;
     await fs.writeFile(DATA_PATH, JSON.stringify(todos, null, 2));
+    return todo;
+}
+
+export async function removeTodo(id) {
+    const todos = await getAllTodos();
+    const deletedTodo = todos.find((todo) => todo.id === id);
+    if (!deletedTodo) {
+        return null;
+    }
+    const filteredTodos = todos.filter((todo) => todo.id !== id);
+    await fs.writeFile(DATA_PATH, JSON.stringify(filteredTodos, null, 2));
+    return deletedTodo;
 }

@@ -1,6 +1,6 @@
 import { database } from "../database/index.js";
 import { ToDoTable } from "../database/schema.js";
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, not } from "drizzle-orm";
 
 export async function saveTodo(text) {
     const newTodo = await database.insert(ToDoTable).values({ text: text })
@@ -22,9 +22,21 @@ export async function getAllTodos() {
 }
 
 export async function modifyTodo(id, newText) {
+    const todo = await database.update(ToDoTable).set({ text: newText }).where(eq(ToDoTable.id, id))
+    .returning({ id: ToDoTable.id, text: ToDoTable.text, isDone: ToDoTable.isDone, createdAt: ToDoTable.createdAt });
+    if (todo.length === 0) {
+        return null;
+    }
+    return todo[0];
 }
 
 export async function changeTodo(id) {
+    const todo = await database.update(ToDoTable).set({ isDone: not(ToDoTable.isDone) }).where(eq(ToDoTable.id, id))
+    .returning({ id: ToDoTable.id, text: ToDoTable.text, isDone: ToDoTable.isDone, createdAt: ToDoTable.createdAt });
+    if (todo.length === 0) {
+        return null;
+    }
+    return todo[0];
 }
 
 export async function removeTodo(id) {

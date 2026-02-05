@@ -18,21 +18,13 @@ main();
 
 // above code is for postgres-js, below is for node-postgres (pg)
 
-import { drizzle } from "drizzle-orm/node-postgres";
 import { migrate } from "drizzle-orm/node-postgres/migrator";
-import { Pool } from "pg";
-import dotenv from "dotenv";
-
-dotenv.config();
-
-const pool = new Pool({
-    connectionString: process.env.DB_CONNECTION_STRING,
-});
+import { database, pool } from "./index.js";
 
 async function main() {
-    const database = drizzle(pool);
     await migrate(database, { migrationsFolder: "./database/migrations" });
     await pool.end();
 }
 
 main();
+

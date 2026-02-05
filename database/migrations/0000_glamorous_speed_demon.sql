@@ -1,4 +1,4 @@
-CREATE TABLE "todo-drizzle" (
+CREATE TABLE "todo_drizzle" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"text" varchar NOT NULL,
 	"is_done" boolean DEFAULT false NOT NULL,

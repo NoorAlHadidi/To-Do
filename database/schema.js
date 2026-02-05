@@ -1,5 +1,4 @@
-import { boolean, timestamp } from "drizzle-orm/gel-core";
-import { pgTable, serial, varchar } from "drizzle-orm/pg-core";
+import { pgTable, serial, varchar, boolean, timestamp } from "drizzle-orm/pg-core";
 
 export const ToDoTable = pgTable("todo-drizzle", {
     id: serial("id").primaryKey(),

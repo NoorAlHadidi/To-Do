@@ -14,6 +14,8 @@ const database = drizzle({ client: pool });
 export default database;
 */
 
+// to name this file config.js would need to change generate script to "drizzle-kit generate --config=config.js" in package.json
+
 import { defineConfig } from "drizzle-kit";
 import dotenv from "dotenv";
 
@@ -21,8 +23,8 @@ dotenv.config();
 
 export default defineConfig({
   schema: "./database/schema.js",
-  out: "./datase/migrations",
-  driver: "pg",
+  out: "./database/migrations",
+  dialect: "postgresql",
   dbCredentials: {
     connectionString: process.env.DB_CONNECTION_STRING,
   },

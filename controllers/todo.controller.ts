@@ -1,4 +1,4 @@
-import type { Request, Response } from "express";
+import { Request, Response } from "express";
 import { 
     saveTodo,
     getSingleTodo,
@@ -6,8 +6,8 @@ import {
     modifyTodo,
     changeTodo,
     removeTodo
-} from "../services/todo.service.ts";
-import { addTodoSchema } from "../schemas/zod.schemas.ts";
+} from "../services/todo.service";
+import { addTodoSchema } from "../schemas/zod.schemas";
 
 export async function addTodo(req: Request, res: Response) {
     const text = addTodoSchema.safeParse(req.body);
@@ -25,7 +25,7 @@ export async function addTodo(req: Request, res: Response) {
 export async function getTodo(req: Request, res: Response) {
     try {
         const id = Number(req.params.id);
-        const todo = await getSingleTodo(65);
+        const todo = await getSingleTodo(id);
         if (!todo) {
             return res.status(404).json({ message: "No todo with that ID exists." })
         }

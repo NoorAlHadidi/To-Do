@@ -16,6 +16,7 @@ export default {
     },
     migrations: {
       tableName: "knex_migrations",
+      directory: "./database/migrations",
     },
   },
 };
